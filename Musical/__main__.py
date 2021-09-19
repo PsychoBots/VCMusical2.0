@@ -1,6 +1,5 @@
 import requests
 from pyrogram import Client as Bot
-
 from Musical.config import API_HASH
 from Musical.config import API_ID
 from Musical.config import BG_IMAGE
