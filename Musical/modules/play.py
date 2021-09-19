@@ -594,7 +594,7 @@ async def play(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(text="YT link", url=f"{url}"),
-                    InlineKeyboardButton(text="•Support•", url="https://t.me/PsychoBots_chat"),
+                    InlineKeyboardButton(text="•Support•", url="https://t.me/lelouchsupportchat"),
                 ],
                 [InlineKeyboardButton(text="🤐Close", callback_data="cls")],
             ]
@@ -687,7 +687,7 @@ async def play(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(text="YT link", url=f"{url}"),
-                    InlineKeyboardButton(text="•Support•", url="https://t.me/PsychoBots_chat"),
+                    InlineKeyboardButton(text="•Support•", url="https://t.me/lelouchsupportchat"),
                 ],
                 [InlineKeyboardButton(text="🤐Close", callback_data="cls")],
                 ]
@@ -845,7 +845,7 @@ async def ytplay(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(text="YT link", url=f"{url}"),
-                    InlineKeyboardButton(text="•Support•", url="https://t.me/PsychoBots_chat"),
+                    InlineKeyboardButton(text="•Support•", url="https://t.me/lelouchsupportchat"),
                 ],
                 [InlineKeyboardButton(text="🤐Close", callback_data="cls")],
         ]
@@ -987,7 +987,7 @@ async def deezer(client: Client, message_: Message):
                 InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
-            [InlineKeyboardButton(text="•Support•", url=f"https://t.me/PsychoBots_chat")],
+            [InlineKeyboardButton(text="•Support•", url=f"https://t.me/lelouchsupportchat")],
         ]
     )
     file_path = await convert(wget.download(url))
@@ -1124,7 +1124,7 @@ async def jiosaavn(client: Client, message_: Message):
             ],
             [
                 InlineKeyboardButton(
-                    text="•Support•", url="https://t.me/PsychoBots_chat"
+                    text="•Support•", url="https://t.me/lelouchsupportchat"
                 )
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
@@ -1233,7 +1233,7 @@ async def lol_cb(b, cb):
                 ],
                 [
                     InlineKeyboardButton(text="YT link", url=f"{url}"),
-                    InlineKeyboardButton(text="•Support•", url="https://t.me/PsychoBots_chat"),
+                    InlineKeyboardButton(text="•Support•", url="https://t.me/lelouchsupportchat"),
                 ],
                 [InlineKeyboardButton(text="🤐Close", callback_data="cls")],
         ]
