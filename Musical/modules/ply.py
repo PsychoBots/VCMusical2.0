@@ -21,6 +21,10 @@ from pyrogram.types import Message
 from Python_ARQ import ARQ
 from youtube_search import YoutubeSearch
 
+
+from Musical.config import SUPPORT_GROUP
+from Musical.config import ASSISTANT_NAME
+from Musical.config import BOT_USERNAME
 from Musical.config import ARQ_API_KEY
 from Musical.config import BOT_NAME as bn
 from Musical.config import DURATION_LIMIT
@@ -150,7 +154,7 @@ async def playlist(client, message):
     await message.reply_text(msg)
 
 
-# ============================= Settings =========================================
+# ============================= Settings ====================================== #
 
 
 def updated_stats(chat, queue, vol=100):
@@ -441,7 +445,7 @@ async def play(_, message: Message):
     global useer
     if message.chat.id in DISABLED_GROUPS:
         return    
-    lel = await message.reply("📡 <b>Processing</b> Your Request! 📡")
+    lel = await message.reply("🎶<b>Processing</b> Your Request! 📡")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
@@ -459,7 +463,7 @@ async def play(_, message: Message):
             if administrator == message.from_user.id:
                 if message.chat.title.startswith("Channel Music: "):
                     await lel.edit(
-                        "<b>Remember to add helper to your channel</b>",
+                        f"<b>Remember to add @{ASSISTANT_NAME} to your channel</b>",
                     )
                     pass
                 try:
@@ -473,10 +477,10 @@ async def play(_, message: Message):
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "@Lovishmusic_bot Assistant is Here ✨"
+                        message.chat.id, f"{BOT_USERNAME} Assistant is Here ✨"
                     )
                     await lel.edit(
-                        "<b> @Lovishmusic_bot Is Here</b>",
+                        f" <b> {BOT_USERNAME} Is Here</b>",
                     )
 
                 except UserAlreadyParticipant:
@@ -485,18 +489,18 @@ async def play(_, message: Message):
                     # print(e)
                     await lel.edit(
                         f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add **@Lovishmusic_bot** to your Group and try again</b>",
+                        f"\n\nOr manually add **{BOT_USERNAME}** to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"<i> {user.first_name} @Lovishmusic_bot not in this chat, Ask admin to send /play command for first time or add {user.first_name} manually</i>"
+            f"<i> {user.first_name} @{ASSISTANT_NAME} not in this chat, Ask admin to send /play command for first time or add {user.first_name} manually</i>"
         )
         return
     text_links=None
-    await lel.edit("📡 <b>Finding</b> Your Request! 📡")
+    await lel.edit("🎶 <b>Finding</b> Your Request! 📡")
     if message.reply_to_message:
         if message.reply_to_message.audio:
             pass
@@ -534,6 +538,8 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton("♪Playlist♪", callback_data="playlist"),
                     InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
+                ],
+                [InlineKeyboardButton(text="•Cʀᴇᴅɪᴛs•", url="https://t.me/Psycho_Bots")
                 ],
                 [InlineKeyboardButton(text="🤐Close", callback_data="cls")],
             ]
@@ -594,7 +600,9 @@ async def play(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(text="YT link", url=f"{url}"),
-                    InlineKeyboardButton(text="•Support•", url="https://t.me/PsychoBots_chat"),
+                    InlineKeyboardButton(text="•Support•", url=f"{SUPPORT_GROUP}"),
+                ],
+                [InlineKeyboardButton(text="•Cʀᴇᴅɪᴛs•", url="https://t.me/Psycho_Bots")
                 ],
                 [InlineKeyboardButton(text="🤐Close", callback_data="cls")],
             ]
@@ -687,7 +695,9 @@ async def play(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(text="YT link", url=f"{url}"),
-                    InlineKeyboardButton(text="•Support•", url="https://t.me/PsychoBots_chat"),
+                    InlineKeyboardButton(text="•Support•", url=f"{SUPPORT_GROUP}"),
+                ],
+                [InlineKeyboardButton(text="•Cʀᴇᴅɪᴛs•", url="https://t.me/Psycho_Bots")
                 ],
                 [InlineKeyboardButton(text="🤐Close", callback_data="cls")],
                 ]
@@ -728,9 +738,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="▶️ <b>Playing</b> here the song requested by {} via **@Lovishmusic_bot**".format(
-                message.from_user.mention()
-            ),
+            caption=f"▶️ <b>Playing</b> here the song requested by {message.from_user.mention()} via **@{BOT_USERNAME}**"
         )
         os.remove("final.png")
         return await lel.delete()
@@ -759,7 +767,7 @@ async def ytplay(_, message: Message):
             if administrator == message.from_user.id:
                 if message.chat.title.startswith("Channel Music: "):
                     await lel.edit(
-                        "<b>Remember to add helper to your channel</b>",
+                        f"<b>Remember to add @{ASSISTANT_NAME} to your channel</b>",
                     )
                     pass
                 try:
@@ -773,7 +781,7 @@ async def ytplay(_, message: Message):
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "I joined this group for playing music in VC"
+                        message.chat.id, f"@{ASSISTANT_NAME} joined this group for playing music in VC"
                     )
                     await lel.edit(
                         "<b>helper userbot joined your chat</b>",
@@ -785,14 +793,14 @@ async def ytplay(_, message: Message):
                     # print(e)
                     await lel.edit(
                         f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add **@JokerMuisc** to your Group and try again</b>",
+                        f"\n\nOr manually add **@{BOT_USERNAME}** to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"<i> {user.first_name} Userbot not in this chat, Ask admin to send /play command for first time or add {user.first_name} manually</i>"
+            f"<i> {user.first_name} @{ASSISTANT_NAME} not in this chat, Ask admin to send /play command for first time or add {user.first_name} manually</i>"
         )
         return
     await lel.edit("📡 <b>Finding</b> Your Request! 📡")
@@ -845,7 +853,9 @@ async def ytplay(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(text="YT link", url=f"{url}"),
-                    InlineKeyboardButton(text="•Support•", url="https://t.me/PsychoBots_chat"),
+                    InlineKeyboardButton(text="•Support•", url=f"{SUPPORT_GROUP}"),
+                ],
+                [InlineKeyboardButton(text="•Cʀᴇᴅɪᴛs•", url="https://t.me/Psycho_Bots")
                 ],
                 [InlineKeyboardButton(text="🤐Close", callback_data="cls")],
         ]
@@ -886,8 +896,8 @@ async def ytplay(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="▶️ <b>Playing</b> here the song requested by {} via **Lovishmusic_bot 🎼**".format(
-                message.from_user.mention()
+            caption="▶️ <b>Playing</b> here the song requested by {} via **@{} 🎼**".format(
+                message.from_user.mention(), BOT_USERNAME
             ),
         )
         os.remove("final.png")
@@ -904,7 +914,7 @@ async def deezer(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "DaisyMusic"
+        user.first_name = "LovishMusic"
     usar = user
     wew = usar.id
     try:
@@ -932,7 +942,7 @@ async def deezer(client: Client, message_: Message):
                         message_.chat.id, "I joined this group for playing music in VC"
                     )
                     await lel.edit(
-                        "<b>helper userbot joined your chat</b>",
+                        f"<b>@{ASSISTANT_NAME} joined your chat</b>",
                     )
 
                 except UserAlreadyParticipant:
@@ -941,7 +951,7 @@ async def deezer(client: Client, message_: Message):
                     # print(e)
                     await lel.edit(
                         f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add **@LovishMuisc_bot** to your Group and try again</b>",
+                        f"\n\nOr manually add **@{BOT_USERNAME}** to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)
@@ -986,8 +996,10 @@ async def deezer(client: Client, message_: Message):
                 InlineKeyboardButton("♪ Playlist", callback_data="playlist"),
                 InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
             ],
+            [InlineKeyboardButton(text="•Cʀᴇᴅɪᴛs•", url="https://t.me/Psycho_Bots")
+            ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
-            [InlineKeyboardButton(text="•Support•", url=f"https://t.me/PsychoBots_chat")],
+            [InlineKeyboardButton(text="•Support•", url=f"{SUPPORT_GROUP}")],
         ]
     )
     file_path = await convert(wget.download(url))
@@ -1079,7 +1091,7 @@ async def jiosaavn(client: Client, message_: Message):
                     # print(e)
                     await lel.edit(
                         f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add **@LovishMuisc_bot** to your Group and try again</b>",
+                        f"\n\nOr manually add **@{BOT_USERNAME}** to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)
@@ -1124,8 +1136,10 @@ async def jiosaavn(client: Client, message_: Message):
             ],
             [
                 InlineKeyboardButton(
-                    text="•Support•", url="https://t.me/PsychoBots_chat"
+                    text="•Support•", url=f"{SUPPORT_GROUP}"
                 )
+            ],
+            [InlineKeyboardButton(text="•Cʀᴇᴅɪᴛs•", url="https://t.me/Psycho_Bots")
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
         ]
@@ -1233,7 +1247,9 @@ async def lol_cb(b, cb):
                 ],
                 [
                     InlineKeyboardButton(text="YT link", url=f"{url}"),
-                    InlineKeyboardButton(text="•Support•", url="https://t.me/PsychoBots_chat"),
+                    InlineKeyboardButton(text="•Support•", url=f"{SUPPORT_GROUP}"),
+                ],
+                [InlineKeyboardButton(text="•Cʀᴇᴅɪᴛs•", url="https://t.me/Psycho_Bots")
                 ],
                 [InlineKeyboardButton(text="🤐Close", callback_data="cls")],
         ]
@@ -1277,7 +1293,7 @@ async def lol_cb(b, cb):
         await b.send_photo(chat_id,
             photo="final.png",
             reply_markup=keyboard,
-            caption=f"▶️ <b>Playing</b> here the song requested by {r_by.mention} via **Lovishmusic_bot**",
+            caption=f"▶️ <b>Playing</b> here the song requested by {r_by.mention} via **@{BOT_USERNAME}**",
         )
         
         os.remove("final.png")
