@@ -41,6 +41,7 @@ from Musical.services.converter.converter import convert
 from Musical.services.downloaders import youtube
 from Musical.services.queues import queues
 
+BOT_USERNAME = Config.BOT_USERNAME
 aiohttpsession = aiohttp.ClientSession()
 chat_id = None
 arq = ARQ("https://thearq.tech", ARQ_API_KEY, aiohttpsession)
@@ -473,10 +474,10 @@ async def play(_, message: Message):
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "@Lovishmusic_bot Assistant is Here ✨"
+                        message.chat.id, f"{BOT_USERNAME} Assistant is Here ✨"
                     )
                     await lel.edit(
-                        "<b> @Lovishmusic_bot Is Here</b>",
+                        f" <b> {BOT_USERNAME} Is Here</b>",
                     )
 
                 except UserAlreadyParticipant:
@@ -485,14 +486,14 @@ async def play(_, message: Message):
                     # print(e)
                     await lel.edit(
                         f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add **@Lovishmusic_bot** to your Group and try again</b>",
+                        f"\n\nOr manually add **{BOT_USERNAME}** to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"<i> {user.first_name} @Lovishmusic_bot not in this chat, Ask admin to send /play command for first time or add {user.first_name} manually</i>"
+            f"<i> {user.first_name} {ASSISTANT_NAME} not in this chat, Ask admin to send /play command for first time or add {user.first_name} manually</i>"
         )
         return
     text_links=None
@@ -594,7 +595,7 @@ async def play(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(text="YT link", url=f"{url}"),
-                    InlineKeyboardButton(text="•Support•", url="https://t.me/lelouchsupportchat"),
+                    InlineKeyboardButton(text="•Support•", url=f{SUPPORT_CHAT}),
                 ],
                 [InlineKeyboardButton(text="🤐Close", callback_data="cls")],
             ]
@@ -785,7 +786,7 @@ async def ytplay(_, message: Message):
                     # print(e)
                     await lel.edit(
                         f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add **@JokerMuisc** to your Group and try again</b>",
+                        f"\n\nOr manually add **{BOT_USERNAME}** to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)
