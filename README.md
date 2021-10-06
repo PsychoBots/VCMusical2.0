@@ -42,8 +42,10 @@ height="40px" width="200px" alt="heroku" /></a>
 
 
 <details><summary> <h3>• 𝙻𝙸𝙲𝙴𝙽𝚂𝙴 •</h3> </summary>
-![](https://www.gnu.org/graphics/gplv3-or-later.png)
-Copyright (C) 2021 Astro-UB
+  
+![GPU](https://www.gnu.org/graphics/gplv3-or-later.png)
+Copyright (C) 2021 Psychobots
+  
 Poject [Psycho_Bots](https://github.com/AstroUB/Astro-UB) is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
