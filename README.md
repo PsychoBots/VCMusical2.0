@@ -41,9 +41,8 @@
 
 # 𝗗𝗘𝗣𝗟𝗢𝗬𝗠𝗘𝗡𝗧
 
-<a href="https://heroku.com/deploy?template=https://github.com/PsychoBots/VCMusical2.0" target="_blank"><img src="https://img.shields.io/badge/DEPLOY%20TO%20HEROKU-black?style=for-the-badge&logo=heroku" 
+<a href="https://heroku.com/deploy?template=https://github.com/PsychoBots/VCMusical2.0" target="_blank"><img src="https://img.shields.io/badge/DEPLOY%20TO%20HEROKU-black?style=for-the-badge&logo=heroku"height="40px" width="200px" alt="heroku" /></a>
 
-height="40px" width="200px" alt="heroku" /></a>
 
     
 
@@ -96,7 +95,7 @@ Marshal for PyTgCalls
 𝙁𝙊𝙇𝙇𝙊𝙒 𝙈𝙀 𝙊𝙉 [𝙂𝙄𝙏𝙃𝙐𝘽](https://github.com/loverboyXD)
 
 </hr>
-## CREDITS 
+
 
 
 
