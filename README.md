@@ -8,12 +8,10 @@
 <br>
 
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/PsychoBots/VCMusical2.0)
-
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg?&style=flat-square)]( https://github.com/PsychoBots/VCMusical2.0#copyright--license)
-
 [![Python 3.6](https://img.shields.io/badge/Python-3.9.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
-
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green?&style=flat-square)](https://GitHub.com/PsychoBots/VCMusical2.0/graphs/commit-activity) 
+
 
 [![ForTheBadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
@@ -28,7 +26,6 @@
 # Fᴏʀᴋ ᴀɴᴅ sᴛᴀʀs 
 
 <a href="https://github.com/PsychoBots/VCMusical2.0/stargazers"><img src="https://img.shields.io/github/stars/PsychoBots/VCMusical2.0?style=social"></a> 
-
 <a href="https://github.com/PsychoBots/VCMusical2.0/fork"><img src="https://img.shields.io/github/forks/PsychoBots/VCMusical2.0?label=Fork&logoColor=blue&style=social"></a> <br>  
 
 <hr/> 
@@ -36,7 +33,6 @@
 # <i><b> sᴜᴘᴘ๏ʀᴛ 🏪</b></i>
 
 <a href="https://telegram.me/Psycho_Bots" target="_blank"><img src="https://img.shields.io/badge/Join-Updates%20Channel-yellow.svg?style=for-the-badge&logo=Telegram"></a>
-
 <a href="https://telegram.me/PsychoBots_Chat" target="_blank"><img src="https://img.shields.io/badge/Join-HelpChat-brown.svg?style=for-the-badge&logo=Telegram"></a>
 
 # 𝗗𝗘𝗣𝗟𝗢𝗬𝗠𝗘𝗡𝗧
@@ -44,11 +40,7 @@
 <a href="https://heroku.com/deploy?template=https://github.com/PsychoBots/VCMusical2.0" target="_blank"><img src="https://img.shields.io/badge/DEPLOY%20TO%20HEROKU-black?style=for-the-badge&logo=heroku"height="40px" width="200px" alt="heroku" /></a>
 
 
-    
-
-    
-
- <details><summary> <h3>• 𝙻𝙸𝙲𝙴𝙽𝚂𝙴 •</h3> </summary>
+<details><summary> <h3>• 𝙻𝙸𝙲𝙴𝙽𝚂𝙴 •</h3> </summary>
 
 ![](https://www.gnu.org/graphics/gplv3-or-later.png)
 
