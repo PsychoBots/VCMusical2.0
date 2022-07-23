@@ -2,7 +2,7 @@ from typing import Dict
 
 from pytgcalls import GroupCall
 
-from Musical.services.callsmusic import client
+from Musical.services.callmusic import client
 from Musical.services.queues import queues
 
 
@@ -10,7 +10,7 @@ instances: Dict[int, GroupCall] = {}
 active_chats: Dict[int, Dict[str, bool]] = {}
 
 
-def init_instance(chat_id: int):
+def init_instance(chat_id: int, binary_status: int):
     if chat_id not in instances:
         instances[chat_id] = GroupCall(client)
 
@@ -26,24 +26,20 @@ def init_instance(chat_id: int):
             instance.input_filename = queues.get(chat_id)["file"]
 
 
-def remove(chat_id: int):
-    if chat_id in instances:
-        del instances[chat_id]
-
-    if not queues.is_empty(chat_id):
-        queues.clear(chat_id)
-
-    if chat_id in active_chats:
-        del active_chats[chat_id]
 
 
-def get_instance(chat_id: int) -> GroupCall:
-    init_instance(chat_id)
-    return instances[chat_id]
+        
+
+
+
+def get_instance(chat_id: int, binary_status: int) -> GroupCall:
+    init_instance(chat_id, binary_staus)
+    return instances[chat_id, binary_status]
 
 
 async def start(chat_id: int):
-    await get_instance(chat_id).start(chat_id)
+    await get_instance(chat_id).start(chat_id) 
+    # await get_instancr(binary_status[1])
     active_chats[chat_id] = {"playing": True, "muted": False}
 
 
